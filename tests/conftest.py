@@ -1,25 +1,18 @@
 import json
 from collections import OrderedDict
-
 import pytest
-from django.contrib.contenttypes.models import ContentType
 from model_mommy import mommy
 from wagtail.tests.testapp.models import FormPage, FormField
-from wagtail.wagtailcore.models import Page, Site
+from wagtail.wagtailcore.models import Page
 
 
 @pytest.mark.django_db()
 @pytest.fixture()
 def form_page(admin_user):
-    content_type = ContentType(model=FormPage, app_label="cms")
-    content_type.save()
-    root_page = Page(title="root_page", slug="root_page", depth=0, path="/", live=True)
-    root_page.save()
-    mommy.make(Site, root_page=root_page)
+    root_page = Page.objects.first()
     form = FormPage()
     form.title = "form"
     form.slug = "form"
-    form.content_type = content_type
     form.live = True
     form.owner = admin_user
     root_page.add_child(instance=form)
@@ -216,6 +209,7 @@ def single_line(form_page):
     return mommy.make(FormField, page=form_page, field_type="singleline", label="single line",
                       help_text="singleline", default_value="singleline", required=True)
 
+
 @pytest.mark.django_db()
 @pytest.fixture()
 def simple_wagtail_form(single_line):
@@ -234,11 +228,9 @@ def simple_form_json_incorrect():
 
 @pytest.fixture()
 def json_submited():
-    return '{"single line": "Test value"}'
+    return {"single line": "Test value"}
 
 
 @pytest.fixture()
 def json_ready_to_save():
     return '{"single-line": "Test value"}'
-
-

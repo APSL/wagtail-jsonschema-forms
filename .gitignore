@@ -36,3 +36,5 @@ node_modules/
 # Tests and logs
 *.log
 tests_failures/
+.tox/
+wagtail_jsonschema_forms.egg-info/
