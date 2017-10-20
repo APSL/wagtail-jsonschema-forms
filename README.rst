@@ -1,6 +1,9 @@
 Wagtail JsonSchema Forms
 ========================
 
+.. image:: https://api.travis-ci.org/APSL/wagtail-jsonschema-forms.svg?branch=master
+    :target: https://travis-ci.org/APSL/wagtail-jsonschema-forms
+
 Wagtail JsonSchema Forms is a simple Django app to Generate JsonSchema Forms from Wagtail's forms and validate it.
 
 This app allows the generation of a JsonSchema form from a Wagtail's form in order to use JsonSchema technology.

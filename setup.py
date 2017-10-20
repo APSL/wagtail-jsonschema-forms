@@ -35,10 +35,7 @@ setup(
     name='wagtail-jsonschema-forms',
     version=get_version('wagtail_jsonschema_forms'),
     description='Generate JsonSchema Forms from Wagtail\'s forms and validate it',
-    long_description='Library that allows the generation of a JsonSchema form from a Wagtail\'s form in order '
-                     'to use JsonSchema technology. In addition, it allows you to parse the response and validate'
-                     ' it. After the validation, the wagtail form is submitted. For example, you can retrieve '
-                     'the jsonschema from in an api and then validate the submitted data.',
+    long_description=codecs.open(os.path.join(os.path.dirname(__file__), 'README.rst'), encoding='utf-8').read(),
     author=get_author('wagtail_jsonschema_forms'),
     author_email=get_email('wagtail_jsonschema_forms'),
     maintainer=get_author('wagtail_jsonschema_forms'),
