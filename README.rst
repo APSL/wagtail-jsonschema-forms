@@ -16,9 +16,9 @@ submit de wagtail form.
 Installation
 ------------
 
-You can install "wagtail_jsonschema_forms" via `pip`_ from `APSL GitHub`_:
+You can install "wagtail-jsonchema-forms" via `pip`_ from `APSL GitHub`_:
 
-* pip install wagtail_jsonschema_forms
+* pip install wagtail-jsonschema-forms
 
 And then you have to add :code:`wagtail_jsonschema_forms` to your :code:`INSTALLED_APPS`.
 
