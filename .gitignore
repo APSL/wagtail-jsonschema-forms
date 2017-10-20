@@ -38,3 +38,5 @@ node_modules/
 tests_failures/
 .tox/
 wagtail_jsonschema_forms.egg-info/
+
+dist/
